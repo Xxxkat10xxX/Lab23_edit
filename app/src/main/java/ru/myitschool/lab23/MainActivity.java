@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton add_fab;
     private RecyclerView recyclerView;
     private TextView type;
-    private Spinner spinner;
 
-    String[] types = {"add","subtract"};
+
+//    String[] types = {"add","subtract"};
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,24 +46,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,types);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner = (Spinner) findViewById(R.id.spinner1);
-        spinner.setAdapter(adapter);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,types);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner = (Spinner) findViewById(R.id.spinner1);
+//        spinner.setAdapter(adapter);
 
         add_fab.setOnClickListener(v -> {
             CustomDialogFragment dialog = new CustomDialogFragment();
             dialog.show(getSupportFragmentManager(), "custom");
             //spinner.setPrompt("Title");
-            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view,
-                                           int position, long id) {
-                }
-                @Override
-                public void onNothingSelected(AdapterView<?> arg0) {
-                }
-            });
+
 
         });
     }
